@@ -1051,6 +1051,7 @@
 		display: -ms-flex;
 		display: flex;
 		position: relative;
+		margin-top: 5%;
 	}
 
 		#signup-form input[type="text"],
