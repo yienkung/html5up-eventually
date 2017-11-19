@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Fibonacci Calculator</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Header -->
+			<header id="header">
+				<h1>Yien's FIBONACCI CALCULATOR</h1>
+				<p>Calculate the fibonacci number!</p>
+			</header>
+
+		<!-- Signup Form -->
+			<form id="signup-form" method="post" action="#">
+				<input type="text" onkeypress="return isNumberKey(event)"name="number" id="number1" placeholder="maximum 35" />
+				<input type="submit" value="Calculate" onclick="generateAnswer()" />
+			</form>
+			<br>
+				<p style="font-size: 36px;" id="outputAnswer">0</p>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>Yien Kung</li><li>Made on Nov. 5 2017</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+				var getNumber = 0 ;
+
+				function fibonacci(num){
+					if (num == 1) {return 1;}
+					if (num <= 0) {return 0;}
+
+					return fibonacci(num - 1) + fibonacci(num - 2);
+ 				}
+ 				function generateAnswer(){
+ 					var getNumber = document.getElementById("number1").value;
+ 					var outputResult = fibonacci(getNumber);
+ 					console.log(outputResult);
+ 					document.getElementById("outputAnswer").innerHTML = outputResult;
+ 				}
+				function isNumberKey(evt) {
+   					 var charCode = (evt.which) ? evt.which : event.keyCode;
+   					 if ((charCode < 48 || charCode > 57))
+    				    return false;
+			   return true;
+				}
+
+			</script>
+
+
+
+	</body>
+</html>
